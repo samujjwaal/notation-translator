@@ -3,4 +3,11 @@
     <string name="app_title_caption">Notations to सुर</string>
     <string name="app_logo_desc">App Icon</string>
     <string name="west_notes_image">Western Notations</string>
+    <string name="acc_note_label">Select Accidental Note Type:</string>
+    <string name="sharp_switch_label">Sharp</string>
+    <string name="flat_switch_label">Flat</string>
+    <string name="input_field_label">Input Notations:</string>
+    <string name="spinner_label">Select Scale:</string>
+    <string name="translate_button">Translate</string>
+    <string name="output_field_label">Output Notations:</string>
 </resources>
