@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryLight"
     tools:context=".Main">
 
     <androidx.constraintlayout.widget.Guideline
@@ -20,19 +21,13 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.95" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/horizontalMargin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.55" />
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="@string/acc_note_label"
+        android:textColor="@color/textColorPrimary"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/rightMargin"
         app:layout_constraintStart_toStartOf="@+id/leftMargin"
@@ -63,6 +58,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="@string/input_field_label"
+        android:textColor="@color/textColorPrimary"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/rightMargin"
         app:layout_constraintStart_toStartOf="@+id/leftMargin"
@@ -70,14 +66,21 @@
 
     <EditText
         android:id="@+id/inputText"
-        android:layout_width="wrap_content"
-        android:layout_height="128dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:elevation="2dp"
         android:ems="10"
         android:gravity="start|top"
+        android:hint="@string/enter_edit_text_hint"
+        android:importantForAutofill="no"
         android:inputType="textMultiLine"
         android:scrollbars="vertical"
+        android:textColor="@color/textColorSecondary"
         app:layout_constraintEnd_toStartOf="@+id/rightMargin"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/leftMargin"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -85,31 +88,33 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="40dp"
         android:text="@string/spinner_label"
+        android:textColor="@color/textColorPrimary"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/scaleSelect"
         app:layout_constraintEnd_toStartOf="@+id/rightMargin"
-        app:layout_constraintStart_toStartOf="@+id/leftMargin" />
+        app:layout_constraintStart_toStartOf="@+id/leftMargin"
+        app:layout_constraintTop_toBottomOf="@+id/inputText" />
 
     <Spinner
         android:id="@+id/scaleSelect"
-        android:layout_width="0dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/horizontalMargin"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toStartOf="@+id/rightMargin"
-        app:layout_constraintStart_toStartOf="@+id/leftMargin" />
+        app:layout_constraintStart_toStartOf="@+id/leftMargin"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <Button
         android:id="@+id/translateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="48dp"
         android:text="@string/translate_button"
+        android:textColor="@color/colorPrimaryDark"
         app:layout_constraintEnd_toStartOf="@+id/rightMargin"
         app:layout_constraintStart_toStartOf="@+id/leftMargin"
-        app:layout_constraintTop_toTopOf="@+id/horizontalMargin" />
+        app:layout_constraintTop_toBottomOf="@+id/scaleSelect" />
 
     <TextView
         android:id="@+id/textView10"
@@ -117,6 +122,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="@string/output_field_label"
+        android:textColor="@color/textColorPrimary"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/rightMargin"
         app:layout_constraintStart_toStartOf="@+id/leftMargin"
@@ -124,14 +130,19 @@
 
     <EditText
         android:id="@+id/outputText"
-        android:layout_width="wrap_content"
-        android:layout_height="128dp"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:background="#00000000"
+        android:elevation="2dp"
         android:ems="10"
         android:gravity="start|top"
         android:importantForAutofill="no"
         android:inputType="textMultiLine"
         android:scrollbars="vertical"
+        android:textColor="@color/textColorSecondary"
         app:layout_constraintEnd_toStartOf="@+id/rightMargin"
         app:layout_constraintStart_toStartOf="@+id/leftMargin"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />

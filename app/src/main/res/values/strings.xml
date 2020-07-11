@@ -10,4 +10,5 @@
     <string name="spinner_label">Select Scale:</string>
     <string name="translate_button">Translate</string>
     <string name="output_field_label">Output Notations:</string>
+    <string name="enter_edit_text_hint">Enter in Caps Lock...</string>
 </resources>
