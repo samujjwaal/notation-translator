@@ -56,6 +56,7 @@ public class Main extends AppCompatActivity {
         translate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                output.setText("");
                 if (!sharpSwitch.isChecked() && !flatSwitch.isChecked()) {
                     Toast.makeText(Main.this, "Please select an Accidental Note Type !", Toast.LENGTH_SHORT).show();
                 } else if (input.getText().toString().equals("")) {
@@ -66,6 +67,7 @@ public class Main extends AppCompatActivity {
                     } else {
                         output.setText(translateNotes(westFlatScale));
                     }
+                    output.setSelectAllOnFocus(true);
                     Toast.makeText(Main.this, "Success! Notations translated !", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -75,9 +77,17 @@ public class Main extends AppCompatActivity {
     public void init() {
         // bind the components to their respective objects
         input = findViewById(R.id.inputText);
-        input.setMovementMethod(new ScrollingMovementMethod());
+
         output = findViewById(R.id.outputText);
-        output.setMovementMethod(new ScrollingMovementMethod());
+        // converting output text box to read only
+        // remove cut, paste from the menu on long press on text
+        output.setCustomSelectionActionModeCallback(new CustomSelectionActionModeCallback());
+        // hide menu when user taps on cursor
+        output.setCustomInsertionActionModeCallback(new CustomInsertionActionModeCallback());
+        // block keyboard appearing when tapping on text box
+        output.setShowSoftInputOnFocus(false);
+
+
         sharpSwitch = findViewById(R.id.sharpSwitch);
         flatSwitch = findViewById(R.id.flatSwitch);
         scaleList = findViewById(R.id.scaleSelect);
