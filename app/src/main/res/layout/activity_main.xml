@@ -145,6 +145,7 @@
         android:scrollbars="vertical"
         android:textColor="@color/textColorSecondary"
         android:textSize="16sp"
+        android:hint="@string/output_edittext_hint"
         app:layout_constraintEnd_toStartOf="@+id/rightMargin"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/leftMargin"
